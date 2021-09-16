@@ -1,15 +1,15 @@
-import "./styles.css";
 import React, { useState } from "react";
 import { FormControl } from "./FormControl";
-import { UserSelector } from "./UserSelector";
+import "./styles.css";
+import { FieldError, Post, StringMap } from "./types";
 import { usePosts } from "./usePosts";
-import { FieldError, StringMap, Post } from "./types";
+import { UserSelector } from "./UserSelector";
 
 export const App = () => {
   const [values, setValues] = useState<Post>({
     userId: "",
     title: "",
-    body: ""
+    body: "",
   });
   const [errors, setErrors] = useState<StringMap<FieldError>>({});
   const [hasTriedToSubmit, setTriedToSubmit] = useState(false);
